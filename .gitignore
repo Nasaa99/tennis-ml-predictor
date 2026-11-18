@@ -12,6 +12,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Trained models. They are rebuilt by `python run_all.py`, so they don't
-# need to be in git. Delete this line if you want to commit small models.
+# Files made by `python run_all.py`. They are rebuilt every run, so they don't
+# need to be in git. (results/ is kept so the figures show on GitHub.)
 models/*.pkl
+models/player_state.json
+data/features.csv
