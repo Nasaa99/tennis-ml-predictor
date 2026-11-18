@@ -163,6 +163,9 @@ def plot_shap(xgb, test):
     X = test[FEATURE_COLUMNS]
     explainer = shap.TreeExplainer(xgb)
     shap_values = explainer.shap_values(X)
+    # The plot spreads the dots out a bit at random so they don't overlap.
+    # Fixing the seed makes the picture exactly the same every run.
+    np.random.seed(0)
     shap.summary_plot(shap_values, X, show=False)
     plt.title(f"SHAP summary for XGBoost ({TEST_YEAR})", loc="left", fontweight="bold")
     plt.tight_layout()
